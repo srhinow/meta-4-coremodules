@@ -1,6 +1,6 @@
 {
   "name": "srhinow/meta-4-coremodules",
-  "description": "a layer with any settings for Contao CMS",
+  "description": "meta-settings for Contao-Core-modules like news,newsletter,calendar-events and faq",
   "keywords": ["contao", "keywords", "description", "pagetitle","meta","news","newsletter","events","faq"],
   "type": "contao-module",
   "homepage": "https://github.com/srhinow/meta-4-coremodules",
