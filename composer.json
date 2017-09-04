@@ -1,0 +1,36 @@
+{
+  "name": "srhinow/meta-4-coremodules",
+  "description": "a layer with any settings for Contao CMS",
+  "keywords": ["contao", "keywords", "description", "pagetitle","meta","news","newsletter","events","faq"],
+  "type": "contao-module",
+  "homepage": "https://github.com/srhinow/meta-4-coremodules",
+  "license": "GPL-3.0+",
+  "authors":[
+    {
+      "name":"Sven Rhinow",
+      "homepage":"https://www.sr-tag.de",
+      "role":"Developer"
+    }
+  ],
+  "support":{
+    "email": "kservice@sr-tag.de",
+    "issues":"https://github.com/srhinow/meta-4-coremodules/issues",
+    "source":"https://github.com/srhinow/meta-4-coremodules"
+  },
+  "require": {
+    "php": ">=5.6",
+    "contao/core-bundle": "~3.5, < 4.0-dev",
+    "contao-community-alliance/composer-plugin":"~2.4 || ~3.0"
+  },
+  "replace": {
+    "contao-legacy/srlayer": "self.version",
+    "contao-legacy/campainLayer": "self.version"
+  },
+  "extra": {
+    "contao": {
+      "sources": {
+        "": "system/modules/x-meta4coremodules"
+      }
+    }
+  }
+}
