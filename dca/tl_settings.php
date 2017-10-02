@@ -8,7 +8,7 @@
 /**
  * System configuration
  */
-$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] .= ';{m4cm_legend:hide},m4cm_twitter_site,m4cm_twitter_creatore';
+$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] .= ';{m4cm_legend:hide},m4cm_twitter_site,m4cm_twitter_creator';
 
 $GLOBALS['TL_DCA']['tl_settings']['fields']['m4cm_twitter_site'] = array
 (
@@ -17,9 +17,9 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['m4cm_twitter_site'] = array
     'inputType'               => 'text',
     'eval'                    => array('tl_class'=>'w50'),
 );
-$GLOBALS['TL_DCA']['tl_settings']['fields']['m4cm_twitter_creatore'] = array
+$GLOBALS['TL_DCA']['tl_settings']['fields']['m4cm_twitter_creator'] = array
 (
-    'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['m4cm_twitter_creatore'],
+    'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['m4cm_twitter_creator'],
     'exclude'                 => true,
     'inputType'               => 'text',
     'eval'                    => array('tl_class'=>'w50'),

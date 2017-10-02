@@ -250,7 +250,7 @@ class ClassMeta4CoreModules extends \Contao\Frontend
     protected function setTwitterHeadMetas() {
         $twitterString = "<meta name=\"twitter:card\" content=\"summary\" />";
         if(strlen($GLOBALS['TL_CONFIG']['m4cm_twitter_site']) > 0) $twitterString .= "<meta name=\"twitter:site\" content=\"".$GLOBALS['TL_CONFIG']['m4cm_twitter_site']."\" />";
-        if(strlen($GLOBALS['TL_CONFIG']['m4cm_twitter_creatore']) > 0) $twitterString .= "<meta name=\"twitter:creator\" content=\"".$GLOBALS['TL_CONFIG']['m4cm_twitter_creatore']."\" />";
+        if(strlen($GLOBALS['TL_CONFIG']['m4cm_twitter_creator']) > 0) $twitterString .= "<meta name=\"twitter:creator\" content=\"".$GLOBALS['TL_CONFIG']['m4cm_twitter_creator']."\" />";
 
         $GLOBALS['m4cm_twitterString'] = $twitterString;
     }
