@@ -54,8 +54,14 @@ class ClassMeta4CoreModules extends \Contao\Frontend
                     $GLOBALS['m4cm']['seoTitle'] = $objFaq->question.' - '.\Environment::get('host');
                     $GLOBALS['m4cm']['seoType'] = 'article';
 
-                    if($objFaq->m4cm_title != '') $this->setPageTitle($objFaq->m4cm_title);
-                    if($objFaq->m4cm_description != '') $this->setDescription($objFaq->m4cm_description);
+                    if($objFaq->m4cm_title != '') {
+                        $this->setPageTitle($objFaq->m4cm_title);
+                        $GLOBALS['m4cm']['seoTitle'] = strip_tags($objFaq->m4cm_title);
+                    }
+                    if($objFaq->m4cm_description != '') {
+                        $this->setDescription($objFaq->m4cm_description);
+                        $GLOBALS['m4cm']['seoDescription'] = strip_tags($objFaq->m4cm_description);
+                    }
                     if($objFaq->m4cm_keywords != '') $this->setKeywords($objFaq->m4cm_keywords);
                     if($objFaq->m4cm_moremetas != '') $this->setMoreHeads($objFaq->m4cm_moremetas);
 
@@ -84,8 +90,14 @@ class ClassMeta4CoreModules extends \Contao\Frontend
                     $GLOBALS['m4cm']['seoDescription'] = strip_tags($objNews->teaser);
                     $GLOBALS['m4cm']['seoType'] = 'article';
 
-                    if($objNews->m4cm_title != '') $this->setPageTitle($objNews->m4cm_title);
-                    if($objNews->m4cm_description != '') $this->setDescription($objNews->m4cm_description);
+                    if($objNews->m4cm_title != '') {
+                        $this->setPageTitle($objNews->m4cm_title);
+                        $GLOBALS['m4cm']['seoTitle'] = strip_tags($objNews->m4cm_title);
+                    }
+                    if($objNews->m4cm_description != '') {
+                        $this->setDescription($objNews->m4cm_description);
+                        $GLOBALS['m4cm']['seoDescription'] = strip_tags($objNews->m4cm_description);
+                    }
                     if($objNews->m4cm_keywords != '') $this->setKeywords($objNews->m4cm_keywords);
                     if($objNews->m4cm_moremetas != '') $this->setMoreHeads($objNews->m4cm_moremetas);
 
@@ -112,12 +124,17 @@ class ClassMeta4CoreModules extends \Contao\Frontend
                     $objNewsletter = \NewsletterModel::findByIdOrAlias(\Input::get('items'));
                     if (null === $objNewsletter) return;
 
-                    $GLOBALS['m4cm']['seoTitle'] = $objNewsletter->title.' - '.\Environment::get('host');
-                    $GLOBALS['m4cm']['seoDescription'] = strip_tags($objNewsletter->teaser);
+                    $GLOBALS['m4cm']['seoTitle'] = $objNewsletter->subject.' - '.\Environment::get('host');
                     $GLOBALS['m4cm']['seoType'] = 'article';
 
-                    if($objNewsletter->m4cm_title != '') $this->setPageTitle($objNewsletter->m4cm_title);
-                    if($objNewsletter->m4cm_description != '') $this->setDescription($objNewsletter->m4cm_description);
+                    if($objNewsletter->m4cm_title != '') {
+                        $this->setPageTitle($objNewsletter->m4cm_title);
+                        $GLOBALS['m4cm']['seoTitle'] = strip_tags($objNewsletter->m4cm_title);
+                    }
+                    if($objNewsletter->m4cm_description != '') {
+                        $this->setDescription($objNewsletter->m4cm_description);
+                        $GLOBALS['m4cm']['seoDescription'] = strip_tags($objNewsletter->m4cm_description);
+                    }
                     if($objNewsletter->m4cm_keywords != '') $this->setKeywords($objNewsletter->m4cm_keywords);
                     if($objNewsletter->m4cm_moremetas != '') $this->setMoreHeads($objNewsletter->m4cm_moremetas);
 
@@ -128,11 +145,18 @@ class ClassMeta4CoreModules extends \Contao\Frontend
                     $objEvent = \CalendarEventsModel::findByIdOrAlias(\Input::get('items'));
                     if (null === $objEvent) return;
 
-                    $GLOBALS['m4cm']['seoTitle'] = $objEvent->subject.' - '.\Environment::get('host');
+                    $GLOBALS['m4cm']['seoTitle'] = $objEvent->title.' - '.\Environment::get('host');
+                    $GLOBALS['m4cm']['seoDescription'] = strip_tags($objEvent->teaser);
                     $GLOBALS['m4cm']['seoType'] = 'article';
 
-                    if($objEvent->m4cm_title != '') $this->setPageTitle($objEvent->m4cm_title);
-                    if($objEvent->m4cm_description != '') $this->setDescription($objEvent->m4cm_description);
+                    if($objEvent->m4cm_title != '') {
+                        $this->setPageTitle($objEvent->m4cm_title);
+                        $GLOBALS['m4cm']['seoTitle'] = strip_tags($objEvent->m4cm_title);
+                    }
+                    if($objEvent->m4cm_description != '') {
+                        $this->setDescription($objEvent->m4cm_description);
+                        $GLOBALS['m4cm']['seoDescription'] = strip_tags($objEvent->m4cm_description);
+                    }
                     if($objEvent->m4cm_keywords != '') $this->setKeywords($objEvent->m4cm_keywords);
                     if($objEvent->m4cm_moremetas != '') $this->setMoreHeads($objEvent->m4cm_moremetas);
 
@@ -258,7 +282,7 @@ class ClassMeta4CoreModules extends \Contao\Frontend
     /**
      * zum finalen setzen der OpenGraph und Google-Meta-Tags per generatePage-HOOK
      */
-    public function m4cmGeneratePage(){
+    public function m4cmGeneratePage() {
         $GLOBALS['TL_HEAD'][] = $GLOBALS['m4cm_ogString'];
         $GLOBALS['TL_HEAD'][] = $GLOBALS['m4cm_googleString'];
         $GLOBALS['TL_HEAD'][] = $GLOBALS['m4cm_twitterString'];
