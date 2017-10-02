@@ -1,7 +1,7 @@
 {
   "name": "srhinow/meta-4-coremodules",
   "description": "meta-settings for Contao-Core-modules like news,newsletter,calendar-events and faq",
-  "keywords": ["contao", "keywords", "description", "pagetitle","meta","news","newsletter","events","faq"],
+  "keywords": ["contao", "keywords", "description", "pagetitle","meta","news","newsletter","events","faq","seo","og","twitter","google"],
   "type": "contao-module",
   "homepage": "https://github.com/srhinow/meta-4-coremodules",
   "license": "GPL-3.0+",
@@ -25,7 +25,7 @@
   "extra": {
     "contao": {
       "sources": {
-        "": "system/modules/x-meta4coremodules"
+        "": "system/modules/meta4coremodules"
       }
     }
   }
