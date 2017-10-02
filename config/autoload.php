@@ -24,5 +24,5 @@ ClassLoader::addNamespaces(array
 ClassLoader::addClasses(array
 (
 	// Classes
-	'srhinow\Meta4CoreModules\ClassMeta4CoreModules' => 'system/modules/x-meta4coremodules/classes/ClassMeta4CoreModules.php',
+	'srhinow\Meta4CoreModules\ClassMeta4CoreModules' => 'system/modules/meta4coremodules/classes/ClassMeta4CoreModules.php',
 ));
