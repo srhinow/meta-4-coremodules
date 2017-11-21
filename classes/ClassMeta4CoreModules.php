@@ -3,7 +3,7 @@
  * Meta for Core-Modules
  *
  * @copyright Sven Rhinow 2004-2017
- * @package   x-meta4coremodules
+ * @package   meta4coremodules
  * @author    Sven Rhinow <http://www.sr-tag.de>
  * @license   LGPL
  */
