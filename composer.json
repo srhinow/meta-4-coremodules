@@ -4,7 +4,7 @@
   "keywords": ["contao", "keywords", "description", "pagetitle","meta","news","newsletter","events","faq","seo","og","twitter","google"],
   "type": "contao-module",
   "homepage": "https://github.com/srhinow/meta-4-coremodules",
-  "license": "GPL-3.0+",
+  "license": "LGPL-3.0+",
   "authors":[
     {
       "name":"Sven Rhinow",
@@ -19,8 +19,16 @@
   },
   "require": {
     "php": ">=5.6",
-    "contao/core-bundle": "~3.5, < 4.0-dev",
+    "contao/core-bundle": "~3.5 || ~4.4",
     "contao-community-alliance/composer-plugin":"~2.4 || ~3.0"
+  },
+  "autoload":{
+    "classmap": [
+      "classes/"
+    ]
+  },
+  "replace": {
+    "contao-legacy/meta4coremodules": "self.version"
   },
   "extra": {
     "contao": {
