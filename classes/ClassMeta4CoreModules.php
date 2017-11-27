@@ -3,7 +3,7 @@
  * Meta for Core-Modules
  *
  * @copyright Sven Rhinow 2004-2017
- * @package   meta4coremodules
+ * @package   x-meta4coremodules
  * @author    Sven Rhinow <http://www.sr-tag.de>
  * @license   LGPL
  */
@@ -184,13 +184,13 @@ class ClassMeta4CoreModules extends \Contao\Frontend
 
         if($GLOBALS['m4cm_overwrite'] == true) {
             //Open-Graph tags setzen
-            $this->setOpenGraphHeadMetas();
+            if($GLOBALS['TL_CONFIG']['set_opengraph_meta'] == 1) $this->setOpenGraphHeadMetas();
 
             //Google+ Tags setzen
-            $this->setGoogleHeadMetas();
+            if($GLOBALS['TL_CONFIG']['set_google_meta'] == 1) $this->setGoogleHeadMetas();
 
             //Twitter-Tags setzen
-            $this->setTwitterHeadMetas();
+            if($GLOBALS['TL_CONFIG']['set_twitter_meta'] == 1) $this->setTwitterHeadMetas();
 
             if($this->noOverwrite) $GLOBALS['m4cm_overwrite'] = false;
         }
