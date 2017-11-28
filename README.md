@@ -1,7 +1,7 @@
 Author: Sven Rhinow
 Web: www.sr-tag.de
 License: LPGL
-Version: 0.2.4
+Version: 0.2.5
 
 deutsch
 ----------
@@ -14,3 +14,5 @@ ab Version 0.2.1 werden die oben genannten Eingabefelder (Titel und Description)
 ab Version 0.2.3 ist die Verwendung mit Contao 4.4 möglich
 
 ab Version 0.2.4 werden Meta-Tags für OpenGraph, Twitter und Google per select in den Einstellungen moeglich  
+
+ab Version 0.2.5 wird auch das keyword-meta-tag gesetzt, wenn es $GLOBALS['TL_KEYWORDS'] nicht gibt 
