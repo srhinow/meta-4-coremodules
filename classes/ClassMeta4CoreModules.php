@@ -157,7 +157,7 @@ class ClassMeta4CoreModules extends \Contao\Frontend
                         $this->setDescription($objEvent->m4cm_description);
                         $GLOBALS['m4cm']['seoDescription'] = strip_tags($objEvent->m4cm_description);
                     }
-                    if($objEvent->m4cm_keywords != '') $this->setKeywords($objEvent->m4cm_keywords);
+                    if($objEvent->m4cm_keywords != '') $this->setKeywords(strip_tags($objEvent->m4cm_keywords));
                     if($objEvent->m4cm_moremetas != '') $this->setMoreHeads($objEvent->m4cm_moremetas);
 
                     if($objEvent->addImage == 1) {
@@ -222,7 +222,8 @@ class ClassMeta4CoreModules extends \Contao\Frontend
     protected function setKeywords($keywordsStr) {
         if ($keywordsStr != '')
         {
-            $GLOBALS['TL_KEYWORDS'] .= (($GLOBALS['TL_KEYWORDS'] != '') ? ', ' : '') . $keywordsStr;
+            if($GLOBALS['TL_KEYWORDS']) $GLOBALS['TL_KEYWORDS'] .= (($GLOBALS['TL_KEYWORDS'] != '') ? ', ' : '') . $keywordsStr;
+            else $GLOBALS['TL_HEAD'][] = "<meta name=\"keywords\" content=\"".$keywordsStr."\">";
         }
     }
 
