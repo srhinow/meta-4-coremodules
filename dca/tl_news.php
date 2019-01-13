@@ -22,7 +22,7 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['m4cm_description'] = array(
     'exclude'                 => true,
     'inputType'               => 'textarea',
     'search'                  => true,
-    'eval'                    => array('style'=>'height:60px', 'decodeEntities'=>true, 'maxlength'=>180,'tl_class'=>'clr'),
+    'eval'                    => array('style'=>'height:60px', 'decodeEntities'=>true, 'maxlength'=>325,'tl_class'=>'clr'),
     'sql'                     => "varchar(325) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_news']['fields']['m4cm_moremetas'] = array(
